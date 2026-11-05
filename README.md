@@ -23,7 +23,7 @@ Products · sign-up & login · cart · checkout (pretend payment) · order histo
 ##  Contents
 
 1. [What is this?](#-what-is-this)
-2. [Explain it like I'm 6](#-explain-it-like-im-6)
+2. [Explain it ](#-explain-it)
 3. [What it looks like](#-what-it-looks-like)
 4. [How it works (for developers)](#-how-it-works-for-developers)
 5. [Step-by-step setup guide](#-step-by-step-setup-guide) — Steps 1 to 10
@@ -55,7 +55,7 @@ The special part is **how it is hosted**. There is no computer that we rent, ins
 
 ---
 
-##  Explain it like I'm 6
+##  Explain it 
 
 *(This section is written so you can read it out loud to a Class 1 child, a friend who has never coded, or a teacher.)*
 
