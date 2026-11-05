@@ -20,7 +20,7 @@ Products · sign-up & login · cart · checkout (pretend payment) · order histo
 
 ---
 
-## 📖 Contents
+##  Contents
 
 1. [What is this?](#-what-is-this)
 2. [Explain it like I'm 6](#-explain-it-like-im-6)
