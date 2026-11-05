@@ -14,7 +14,7 @@
 **A complete online shop that runs on AWS with no servers to look after.**<br>
 Products · sign-up & login · cart · checkout (pretend payment) · order history · admin page
 
-[🧒 Explain it simply](#-explain-it-like-im-6) · [📸 Screenshots](#-what-it-looks-like) · [🚀 Setup guide](#-step-by-step-setup-guide) · [🧪 Try it](#-things-to-try-good-and-bad-cases) · [🆘 Help](#-troubleshooting)
+[ Explain it simply](#-explain-it-like-im-6) · [ Screenshots](#-what-it-looks-like) · [ Setup guide](#-step-by-step-setup-guide) · [ Try it](#-things-to-try-good-and-bad-cases) · [ Help](#-troubleshooting)
 
 </div>
 
@@ -42,7 +42,7 @@ This is a **working online shop**. People can browse products, create an account
 
 The special part is **how it is hosted**. There is no computer that we rent, install and keep switched on. Instead the shop is built from small AWS services that wake up only when somebody uses them. That style is called **serverless**.
 
-| ✅ You get | 🙅 You do *not* need |
+|  You get |  You do *not* need |
 | --- | --- |
 | A real shop on a real web address (HTTPS) | To buy, install or patch a server |
 | Safe sign-up and login | To store passwords yourself |
@@ -55,15 +55,15 @@ The special part is **how it is hosted**. There is no computer that we rent, ins
 
 ---
 
-## 🧒 Explain it like I'm 6
+##  Explain it like I'm 6
 
 *(This section is written so you can read it out loud to a Class 1 child, a friend who has never coded, or a teacher.)*
 
-### The story: **Indu's Toy Shop** 🧸
+### The story: **Indu's Toy Shop** 
 
 Imagine a toy shop. A shop needs a few things to work:
 
-| 🏪 In the toy shop | ☁️ The real AWS name | 🗣️ Say it like this |
+|  In the toy shop |  The real AWS name |  Say it like this |
 | --- | --- | --- |
 | **The shop window and shelves**, with a copy of the window in every town so you can see it fast | S3 + CloudFront | "A picture-book of our shop. Anyone, anywhere, can open it quickly." |
 | **The door-keeper** who checks your school ID card | Cognito | "Only people with their own ID card can buy. Nobody can pretend to be you." |
@@ -73,20 +73,20 @@ Imagine a toy shop. A shop needs a few things to work:
 | **The postman** who delivers the "thank you" letter *(optional)* | SES | "He sends a message to say your order is on its way." |
 | **A LEGO instruction sheet** for building the whole shop | CloudFormation / SAM (`template.yaml`) | "One paper that tells the computer how to build the entire shop, so we can build it again any time." |
 
-### 🎬 What happens when you buy a toy?
+###  What happens when you buy a toy?
 
 ```mermaid
 flowchart TB
   subgraph R1[" "]
     direction LR
-    A["🧒 You open<br/>the shop window"] --> B["👀 You pick a toy and<br/>put it in your basket"] --> C["🪪 The door-keeper<br/>checks your ID card"]
+    A[" You open<br/>the shop window"] --> B[" You pick a toy and<br/>put it in your basket"] --> C[" The door-keeper<br/>checks your ID card"]
   end
   subgraph R2[" "]
     direction LR
-    D["🛎️ The counter helper<br/>takes your note"] --> E["🧑‍🔧 A tiny worker wakes up<br/>and checks the toy is in stock"] --> F["📒 The big notebook writes:<br/>1 toy less, 1 order more"]
+    D[" The counter helper<br/>takes your note"] --> E[" A tiny worker wakes up<br/>and checks the toy is in stock"] --> F[" The big notebook writes:<br/>1 toy less, 1 order more"]
   end
   R1 --> R2
-  R2 --> G["🎉 You see: Thank you!<br/>Your order is placed"]
+  R2 --> G[" You see: Thank you!<br/>Your order is placed"]
 ```
 
 1. **You open the shop window.** (The website loads.)
@@ -95,9 +95,9 @@ flowchart TB
 4. **The counter helper takes your note.** (Your browser sends the order.)
 5. **A tiny worker wakes up.** It looks in the notebook: *is the toy really here? what is the real price?*
 6. **The notebook is updated** – one toy fewer, one new order. This happens **all together or not at all**, like putting a toy in the bag *and* taking the money in one go.
-7. **You get a "Thank you!"** and the tiny worker goes back to sleep. 😴
+7. **You get a "Thank you!"** and the tiny worker goes back to sleep. 
 
-### 🛡️ Three rules the shop never breaks
+###  Three rules the shop never breaks
 
 | Rule | Child-friendly version | Why it matters |
 | --- | --- | --- |
@@ -105,17 +105,17 @@ flowchart TB
 | **Never sell a toy we don't have** | "If the last toy is gone, it's gone." | Two people can't both buy the last one. |
 | **Only pretend money** | "We play shop – nobody pays real money." | Safe for learning. No card numbers are ever asked. |
 
-### ⏱️ The 30-second version (for a presentation)
+###  The 30-second version (for a presentation)
 
 > "We built an online shop with **no servers of our own**. The website sits in **S3 and CloudFront**. **Cognito** handles login. **API Gateway** receives requests and passes them to small **Lambda** functions. They read and write **DynamoDB**. One **template file** builds everything, and **92 automatic tests** check both good and bad cases."
 
-### ❓ "Serverless" – does it mean there are *no* computers?
+###  "Serverless" – does it mean there are *no* computers?
 
 No. There are computers, but **Amazon looks after them**, not us. It is like a school with a caretaker: the teachers teach and don't have to mop the floor. We only write the shop's *rules*; AWS keeps the machines running.
 
 ---
 
-## 📸 What it looks like
+##  What it looks like
 
 <div align="center">
 
@@ -252,7 +252,7 @@ sequenceDiagram
 
 ---
 
-## 🚀 Step-by-step setup guide
+##  Step-by-step setup guide
 
 > [!TIP]
 > **Already know AWS?** Skip to the short version: have an AWS account, Node.js 24, AWS CLI v2 and SAM CLI, run `aws configure`, then
@@ -285,14 +285,14 @@ flowchart TB
   T1 --> T2 --> T3
 ```
 
-> **How to read the boxes below:** 🧒 *In plain words* explains the step simply. 🔧 *Technical detail* is for developers.
+> **How to read the boxes below:**  *In plain words* explains the step simply. 🔧 *Technical detail* is for developers.
 > **Where do I type commands?** In a *terminal*: **Windows** → open **Windows Terminal** or **PowerShell** from the Start menu. **Mac** → open **Terminal**. Type (or paste) each command and press **Enter**. Lines starting with `#` are notes, not commands.
 
 ---
 
-### Step 1 · Get an AWS account and a safe "user" 🔑
+### Step 1 · Get an AWS account and a safe "user" 
 
-🧒 *In plain words:* AWS is like a giant rented workshop. You need your own key to get in, and we make a **second, everyday key** so the master key stays locked in a drawer.
+ *In plain words:* AWS is like a giant rented workshop. You need your own key to get in, and we make a **second, everyday key** so the master key stays locked in a drawer.
 
 1. Go to **<https://aws.amazon.com/>** and choose **Create an AWS account**. You will need an email address, a phone number and a card for identity checks.
 2. Sign in to the **AWS Management Console**. This first login is the **root user** (the master key). **Do not use it for daily work.**
@@ -301,7 +301,7 @@ flowchart TB
 5. Open the new user → **Security credentials** → **Create access key** → choose **Command Line Interface (CLI)** → create it. You will see an **Access key ID** and a **Secret access key**. **Copy both somewhere private now** — AWS shows the secret only once.
 6. **Strongly recommended – set a spending alarm:** console → **Billing and Cost Management → Budgets → Create budget**, choose a small monthly amount, and add your email for alerts.
 
-✅ **You should have:** an Access key ID (starts with `AKIA…`) and a Secret access key saved privately.
+ **You should have:** an Access key ID (starts with `AKIA…`) and a Secret access key saved privately.
 
 > [!WARNING]
 > **Never paste your secret key into GitHub, a chat, a screenshot or any file in this project.** Anyone who has it can use (and bill) your AWS account. If you ever leak it: IAM → your user → **Security credentials** → **Deactivate / delete** the key and make a new one.
@@ -310,9 +310,9 @@ flowchart TB
 
 ---
 
-### Step 2 · Install the four tools 🧰
+### Step 2 · Install the four tools 
 
-🧒 *In plain words:* We need four helpers on your computer: one to run our code, one to download the project, one to talk to AWS, and one to build the shop from the instruction sheet.
+ *In plain words:* We need four helpers on your computer: one to run our code, one to download the project, one to talk to AWS, and one to build the shop from the instruction sheet.
 
 | Tool | What it is for | Download | Check it worked |
 | --- | --- | --- | --- |
@@ -321,14 +321,14 @@ flowchart TB
 | **AWS CLI v2** | Lets your computer talk to AWS | [Install guide](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) | `aws --version` → `aws-cli/2.x` |
 | **AWS SAM CLI** | Builds & deploys `template.yaml` | [Install guide](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html) | `sam --version` |
 
-⚠️ **After installing, close the terminal and open a NEW one**, otherwise the new commands will not be found.
+ **After installing, close the terminal and open a NEW one**, otherwise the new commands will not be found.
 
-✅ **You should see** a version number for each of the four check commands.
+ **You should see** a version number for each of the four check commands.
 
 🔧 *Technical detail:* `package.json` allows Node `>=22.12`; `.node-version` and CI use 24, and the Lambda runtime is `nodejs24.x`. Docker is **not** required (no native dependencies; the AWS SDK v3 is provided by the Lambda runtime).
 
 <details>
-<summary><b>🆘 If a command says "not found" / "not recognized"</b></summary>
+<summary><b> If a command says "not found" / "not recognized"</b></summary>
 
 You most likely need to **close and reopen the terminal** (or restart the computer once on Windows). If it still fails, run the installer again and make sure the option to *add to PATH* is ticked.
 
@@ -342,9 +342,9 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 
 ---
 
-### Step 3 · Connect your computer to AWS 🔌
+### Step 3 · Connect your computer to AWS 
 
-🧒 *In plain words:* We give your computer the everyday key from Step 1 so it is allowed to build things in your AWS workshop.
+ *In plain words:* We give your computer the everyday key from Step 1 so it is allowed to build things in your AWS workshop.
 
 ```bash
 aws configure
@@ -365,17 +365,17 @@ Now check that it works:
 aws sts get-caller-identity
 ```
 
-✅ **You should see** a small block of text containing your `Account` number and a `Arn` ending in `user/eshop-admin`.
+ **You should see** a small block of text containing your `Account` number and a `Arn` ending in `user/eshop-admin`.
 
-❌ **If you see** `Unable to locate credentials` → run `aws configure` again. **If you see** `InvalidClientTokenId` → the keys were typed wrongly; run `aws configure` again.
+ **If you see** `Unable to locate credentials` → run `aws configure` again. **If you see** `InvalidClientTokenId` → the keys were typed wrongly; run `aws configure` again.
 
 🔧 *Technical detail:* `samconfig.toml` has no region, so SAM and every script use the region from your AWS CLI profile. Keep the **same region** for all later steps. Stack name defaults to `eshop` (override with the `STACK_NAME` environment variable).
 
 ---
 
-### Step 4 · Download the project and check it works on your computer 📥
+### Step 4 · Download the project and check it works on your computer 
 
-🧒 *In plain words:* We copy the shop's plans to your computer, then run the shop's built-in "quiz" (the tests) to make sure everything is healthy before we build anything in the cloud.
+ *In plain words:* We copy the shop's plans to your computer, then run the shop's built-in "quiz" (the tests) to make sure everything is healthy before we build anything in the cloud.
 
 ```bash
 git clone https://github.com/IndushreeDN/aws-online-store.git
@@ -387,7 +387,7 @@ npm test
 * `npm run setup` installs the helper libraries for the backend **and** the website (about a minute).
 * `npm test` runs the 51 backend tests. They use a pretend database, so **no AWS and no internet are needed**.
 
-✅ **You should see** at the end of the test output:
+ **You should see** at the end of the test output:
 
 ```
 # tests 51
@@ -403,15 +403,15 @@ npm test
 cd ..
 ```
 
-✅ **You should see:** `Tests 41 passed (41)`.
+ **You should see:** `Tests 41 passed (41)`.
 
-❌ **If tests fail**, check `node --version` (needs 22.12 or newer; 24 recommended) and run `npm run setup` again.
+ **If tests fail**, check `node --version` (needs 22.12 or newer; 24 recommended) and run `npm run setup` again.
 
 ---
 
-### Step 5 · Build the shop's backend in AWS ☁️
+### Step 5 · Build the shop's backend in AWS 
 
-🧒 *In plain words:* Now the computer reads the LEGO instruction sheet (`template.yaml`) and builds the shop's door-keeper, helpers, workers and notebook inside AWS. This is the slow step – time for a snack. 🍪
+ *In plain words:* Now the computer reads the LEGO instruction sheet (`template.yaml`) and builds the shop's door-keeper, helpers, workers and notebook inside AWS. This is the slow step – time for a snack. 
 
 ```bash
 npm run deploy:backend
@@ -419,7 +419,7 @@ npm run deploy:backend
 
 This runs `sam build` and then `sam deploy`. It takes **about 5–10 minutes** (CloudFront is the slow part).
 
-✅ **You should see**, near the end:
+ **You should see**, near the end:
 
 ```
 Successfully created/updated stack - eshop in ap-south-1
@@ -427,41 +427,41 @@ Successfully created/updated stack - eshop in ap-south-1
 
 followed by a table of **Outputs** (`ApiUrl`, `UserPoolId`, `UserPoolClientId`, `SiteUrl`, …). You do not need to copy them – later steps read them for you.
 
-❌ **If it fails:** open the AWS console → **CloudFormation** → stack `eshop` → **Events** tab. The newest red line says why. Fix it, then run the command again (it is safe to repeat).
+ **If it fails:** open the AWS console → **CloudFormation** → stack `eshop` → **Events** tab. The newest red line says why. Fix it, then run the command again (it is safe to repeat).
 
 🔧 *Technical detail:* Creates 2 DynamoDB tables, a Cognito user pool + client + `admins` group, an HTTP API with a JWT authorizer, 8 Lambda functions (least-privilege policies per function), a private S3 bucket, a CloudFront distribution with Origin Access Control, and a bucket policy. SAM stores the packaged code in a managed bucket (`resolve_s3 = true`).
 
 ---
 
-### Step 6 · Put the sample products on the shelves 🧸
+### Step 6 · Put the sample products on the shelves 
 
-🧒 *In plain words:* The shop is built but the shelves are empty. This puts 12 sample toys on them.
+ *In plain words:* The shop is built but the shelves are empty. This puts 12 sample toys on them.
 
 ```bash
 npm run seed
 ```
 
-✅ **You should see:** `✔ Added 12 sample products to eshop-products`
+ **You should see:** `✔ Added 12 sample products to eshop-products`
 
-ℹ️ Running it again will **refuse** if products already exist ("so your changes are never overwritten"). To reset to the starting stock on purpose: `npm run seed -- --force`.
+ Running it again will **refuse** if products already exist ("so your changes are never overwritten"). To reset to the starting stock on purpose: `npm run seed -- --force`.
 
 ---
 
-### Step 7 · Try the shop on your own computer 💻
+### Step 7 · Try the shop on your own computer 
 
-🧒 *In plain words:* We tell the website where the door-keeper and counter helper live, then open the shop in your browser.
+ *In plain words:* We tell the website where the door-keeper and counter helper live, then open the shop in your browser.
 
 ```bash
 npm run configure
 npm run dev
 ```
 
-* `npm run configure` writes the file `frontend/.env` with your shop's addresses (✅ `✔ Wrote …/frontend/.env`). It is safe to run any number of times. To name your shop: `npm run configure -- --name "My Shop"`.
+* `npm run configure` writes the file `frontend/.env` with your shop's addresses ( `✔ Wrote …/frontend/.env`). It is safe to run any number of times. To name your shop: `npm run configure -- --name "My Shop"`.
 * `npm run dev` starts the website. Open **<http://localhost:5173>** in your browser.
 
-✅ **You should see** the shop with 12 products.
+ **You should see** the shop with 12 products.
 
-**Create your shopper account:** click **Sign in → Create an account**, enter **an email you can open** and a password (at least 8 characters, with a capital letter, a small letter and a number). Amazon emails you a **6-digit code**; type it in and you are signed in. 🎉
+**Create your shopper account:** click **Sign in → Create an account**, enter **an email you can open** and a password (at least 8 characters, with a capital letter, a small letter and a number). Amazon emails you a **6-digit code**; type it in and you are signed in. 
 
 Press `Ctrl + C` in the terminal when you want to stop the website.
 
@@ -469,9 +469,9 @@ Press `Ctrl + C` in the terminal when you want to stop the website.
 
 ---
 
-### Step 8 · Make yourself the shop admin 👑
+### Step 8 · Make yourself the shop admin 
 
-🧒 *In plain words:* Anyone can be a shopper, but only the owner can change prices. We give *your* account a special "admins" badge.
+ *In plain words:* Anyone can be a shopper, but only the owner can change prices. We give *your* account a special "admins" badge.
 
 First, find your login pool's ID:
 
@@ -485,17 +485,17 @@ It prints something like `ap-south-1_AbC123xyZ`. Now add yourself to the group (
 aws cognito-idp admin-add-user-to-group --user-pool-id <UserPoolId> --username <your-email> --group-name admins
 ```
 
-Finally, in the website click **Sign out** and then **Sign in** again. An **Admin** link appears in the top menu. ✨
+Finally, in the website click **Sign out** and then **Sign in** again. An **Admin** link appears in the top menu. 
 
-❌ **No Admin link?** Sign out and in again – your badge is only added to a *new* login card. See [Troubleshooting](#-troubleshooting).
+ **No Admin link?** Sign out and in again – your badge is only added to a *new* login card. See [Troubleshooting](#-troubleshooting).
 
-🔧 *Technical detail:* Admin rights come from the `cognito:groups` claim inside the signed ID token. Every admin Lambda checks it again server-side (`requireAdmin`), so hiding the link is only cosmetic.
+ *Technical detail:* Admin rights come from the `cognito:groups` claim inside the signed ID token. Every admin Lambda checks it again server-side (`requireAdmin`), so hiding the link is only cosmetic.
 
 ---
 
-### Step 9 · Put the shop on the internet 🌍
+### Step 9 · Put the shop on the internet 
 
-🧒 *In plain words:* Until now only *you* could see the shop (on your own computer). This step uploads the shop window to the cloud so anyone with the link can see it.
+ *In plain words:* Until now only *you* could see the shop (on your own computer). This step uploads the shop window to the cloud so anyone with the link can see it.
 
 ```bash
 npm run deploy:site
@@ -503,7 +503,7 @@ npm run deploy:site
 
 It builds the website, uploads it to S3 and refreshes CloudFront (5 small steps are printed).
 
-✅ **You should see:**
+ **You should see:**
 
 ```
 ✔ Your store is live at:
@@ -511,15 +511,15 @@ It builds the website, uploads it to S3 and refreshes CloudFront (5 small steps 
    https://dxxxxxxxxxxxx.cloudfront.net
 ```
 
-Open that address. 🎉 The very first time it can take a few minutes before the link works everywhere.
+Open that address.  The very first time it can take a few minutes before the link works everywhere.
 
 **Updating later:** change something → `npm test` → `npm run deploy:backend` (if backend/template changed) → `npm run deploy:site` (if website changed).
 
 ---
 
-### Step 10 · Clean up (so nothing keeps costing money) 🧹
+### Step 10 · Clean up (so nothing keeps costing money) 
 
-🧒 *In plain words:* When you have finished playing, we put all the toys back and tidy the room.
+ *In plain words:* When you have finished playing, we put all the toys back and tidy the room.
 
 ```bash
 npm run destroy
@@ -527,9 +527,9 @@ npm run destroy
 
 It asks you to type `DELETE` (capital letters) to confirm. It then empties the website bucket and deletes the whole stack. **CloudFront can take 10–15 minutes** to disappear.
 
-⚠️ This permanently deletes **all products, orders and user accounts** of that shop.
+ This permanently deletes **all products, orders and user accounts** of that shop.
 
-✅ **You should see:** `✔ Everything has been deleted.`
+ **You should see:** `✔ Everything has been deleted.`
 
 <details>
 <summary><b>Optional: remove SAM's helper bucket too</b></summary>
@@ -540,10 +540,10 @@ It asks you to type `DELETE` (capital letters) to confirm. It then empties the w
 
 ---
 
-### ➕ Optional extras
+###  Optional extras
 
 <details>
-<summary><b>📧 Send order-confirmation emails (Amazon SES)</b></summary>
+<summary><b> Send order-confirmation emails (Amazon SES)</b></summary>
 
 1. In the AWS console open **Amazon SES → Verified identities → Create identity**, choose **Email address**, and click the verification link AWS emails you.
 2. Deploy again with that address:
@@ -560,7 +560,7 @@ New SES accounts start in a *sandbox*: you can only email addresses that are als
 </details>
 
 <details>
-<summary><b>🏷️ Use a different shop name or stack name</b></summary>
+<summary><b> Use a different shop name or stack name</b></summary>
 
 * Shop name (shown in the header): `npm run configure -- --name "My Shop"`, then `npm run deploy:site`.
 * Different AWS stack name (to run two copies): set the `STACK_NAME` (and `APP_NAME`) environment variable before each command, and pass `--stack-name` / the matching `AppName` parameter to `sam deploy`.
@@ -569,11 +569,11 @@ New SES accounts start in a *sandbox*: you can only email addresses that are als
 
 ---
 
-## 🧪 Things to try: good and bad cases
+##  Things to try: good and bad cases
 
 A shop that only works when everyone behaves is not finished. Try **both** columns once your shop is running.
 
-| ✅ Good cases (should work) | ❌ Bad cases (should be refused safely) |
+|  Good cases (should work) |  Bad cases (should be refused safely) |
 | --- | --- |
 | Search for `mug`, or click a category button | Search for `zzzz` → "No products match your search." |
 | Add products to the cart and change the quantity | Try to add more **Running Shoes** than the **2** in stock → the shop caps it at 2 |
@@ -590,7 +590,7 @@ A shop that only works when everyone behaves is not finished. Try **both** colum
 
 ---
 
-## ✅ Automatic tests
+##  Automatic tests
 
 ```bash
 npm test                  # 51 backend tests, no AWS needed (pretend in-memory DynamoDB)
@@ -610,7 +610,7 @@ cd frontend && npm test   # 41 website tests, with a pretend backend
 
 ---
 
-## 📂 Project map
+##  Project map
 
 ```text
 aws-online-store/
@@ -631,7 +631,7 @@ aws-online-store/
 └── .github/workflows/       CI (lint, test, build)
 ```
 
-## 🔌 API
+##  API
 
 | Method and path | Who | Purpose |
 | --- | --- | --- |
@@ -646,7 +646,7 @@ aws-online-store/
 
 Order rules: at most **10 different products** per order and **10 of one product**; delivery is **₹49**, free from **₹999**; payment methods are `TEST_SUCCESS`, `TEST_DECLINED` and `COD`.
 
-## 🧠 Design decisions worth knowing
+##  Design decisions worth knowing
 
 * **Prices never come from the browser.** The order function reads prices from DynamoDB and ignores anything the client sends.
 * **Stock cannot go negative or be oversold.** Stock changes and the order are saved in **one DynamoDB transaction** with a "stock is enough" condition.
@@ -659,13 +659,13 @@ Order rules: at most **10 different products** per order and **10 of one product
 
 ---
 
-## 💰 Cost and safety
+##  Cost and safety
 
 **Cost.** Everything is *pay-per-use*, so a shop nobody visits costs very little, and light testing is normally cheap or covered by AWS's free offers. Prices and free-tier rules change, so **check <https://aws.amazon.com/pricing/>** for your account, **set a Budget alert (Step 1)** and **run `npm run destroy` (Step 10)** when you are done.
 
 **Is it safe to publish this code on GitHub?** Yes – the repository contains **no passwords, access keys or account numbers**. To keep it that way:
 
-| ✅ Do | ❌ Never |
+|  Do |  Never |
 | --- | --- |
 | Keep `frontend/.env` on your computer only (it is already in `.gitignore`) | Commit AWS keys, `.pem` files or the `~/.aws` folder |
 | Run `git status` before every commit and read the list | Paste keys in issues, screenshots or chats |
@@ -675,7 +675,7 @@ Order rules: at most **10 different products** per order and **10 of one product
 
 ---
 
-## 🆘 Troubleshooting
+##  Troubleshooting
 
 | Problem you see | Why it happens | What to do |
 | --- | --- | --- |
@@ -701,20 +701,20 @@ Still stuck? [Open an issue](../../issues) and paste the **exact error text** (b
 
 ---
 
-## 🔭 Ideas for next steps
+##  Ideas for next steps
 
 Server-side cart · a real payment gateway (Razorpay or Stripe test mode, with webhook verification) · product images uploaded to S3 · search with OpenSearch · sales dashboard with Athena and QuickSight · GitHub Actions deploy using OIDC (no stored keys) · a custom domain with HTTPS · order status updates (Packed → Shipped → Delivered).
 
-## 🤝 Contributing
+##  Contributing
 
 Found a typo or a bug? Pull requests are welcome. Run `npm test` and `cd frontend && npm test` first – CI runs the same checks.
 
-## 📄 License
+##  License
 
 Released under the [MIT License](LICENSE). You may use, copy and change this project, including for your own learning and portfolio.
 
 <div align="center">
 
-<sub>Made as a learning project to show that a full online shop can run with **no servers of our own**. 🛍️☁️</sub>
+<sub>Made as a learning project to show that a full online shop can run with **no servers of our own**. </sub>
 
 </div>
