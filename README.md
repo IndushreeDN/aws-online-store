@@ -36,7 +36,7 @@ Products · sign-up & login · cart · checkout (pretend payment) · order histo
 
 ---
 
-## 🛒 What is this?
+##  What is this?
 
 This is a **working online shop**. People can browse products, create an account, fill a cart, "pay" with a *pretend* payment, and see their orders. The shop owner gets an **Admin page** to change prices and stock and to add new products.
 
