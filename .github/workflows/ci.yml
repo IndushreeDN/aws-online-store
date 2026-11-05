@@ -1,0 +1,20 @@
+# Runs the automatic checks on every push, so a broken change is caught before it is deployed.
+name: CI
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Check the AWS template
+        run: pip install cfn-lint && cfn-lint template.yaml
+      - name: Backend tests
+        run: npm ci && npm test
+      - name: Website tests and build
+        run: cd frontend && npm ci && npm test && npm run build

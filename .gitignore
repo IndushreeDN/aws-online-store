@@ -1,0 +1,17 @@
+# Things that must never be uploaded to GitHub
+node_modules/
+.aws-sam/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+seed/.batch.json
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Safety net: never commit AWS keys or key files
+.aws/
+*.pem
+*.key
+credentials

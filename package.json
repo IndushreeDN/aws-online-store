@@ -1,0 +1,25 @@
+{
+  "name": "aws-online-store",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Serverless online store on AWS: DynamoDB, Lambda, API Gateway, Cognito, S3 and CloudFront, with a React website.",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "setup": "npm install && npm --prefix frontend install",
+    "test": "node --test \"backend/test/*.test.mjs\"",
+    "deploy:backend": "sam build && sam deploy",
+    "seed": "node scripts/seed.mjs",
+    "configure": "node scripts/configure.mjs",
+    "dev": "npm --prefix frontend run dev",
+    "deploy:site": "node scripts/deploy-site.mjs",
+    "destroy": "node scripts/destroy.mjs"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1152.0",
+    "@aws-sdk/client-sesv2": "^3.1152.0",
+    "@aws-sdk/lib-dynamodb": "^3.1152.0"
+  }
+}

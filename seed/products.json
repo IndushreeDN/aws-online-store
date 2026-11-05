@@ -1,0 +1,14 @@
+[
+  { "productId": "p-earbuds", "name": "Wireless Earbuds", "category": "Electronics", "pricePaise": 149900, "stock": 25, "imageUrl": "/images/earbuds.svg", "description": "Bluetooth earbuds with a charging case and up to 20 hours of playback." },
+  { "productId": "p-speaker", "name": "Bluetooth Speaker", "category": "Electronics", "pricePaise": 229900, "stock": 15, "imageUrl": "/images/speaker.svg", "description": "Portable speaker with deep bass. Splash resistant, 12 hours of music." },
+  { "productId": "p-stand", "name": "Phone Stand", "category": "Electronics", "pricePaise": 29900, "stock": 60, "imageUrl": "/images/stand.svg", "description": "Foldable aluminium stand for phones and small tablets." },
+  { "productId": "p-kurta", "name": "Cotton Kurta", "category": "Fashion", "pricePaise": 89900, "stock": 30, "imageUrl": "/images/kurta.svg", "description": "Soft, breathable cotton kurta for everyday wear." },
+  { "productId": "p-backpack", "name": "Laptop Backpack", "category": "Fashion", "pricePaise": 119900, "stock": 20, "imageUrl": "/images/backpack.svg", "description": "Water-resistant 25-litre backpack with a padded laptop pocket." },
+  { "productId": "p-shoes", "name": "Running Shoes", "category": "Fashion", "pricePaise": 249900, "stock": 2, "imageUrl": "/images/shoes.svg", "description": "Lightweight running shoes with a cushioned sole. Almost sold out." },
+  { "productId": "p-bottle", "name": "Steel Water Bottle", "category": "Home", "pricePaise": 44900, "stock": 80, "imageUrl": "/images/bottle.svg", "description": "1-litre insulated bottle. Keeps drinks cold for 24 hours." },
+  { "productId": "p-lamp", "name": "LED Desk Lamp", "category": "Home", "pricePaise": 99900, "stock": 18, "imageUrl": "/images/lamp.svg", "description": "Dimmable desk lamp with three colour modes and a USB port." },
+  { "productId": "p-mug", "name": "Ceramic Mug", "category": "Home", "pricePaise": 24900, "stock": 100, "imageUrl": "/images/mug.svg", "description": "Handmade ceramic mug, 350 ml. Microwave safe." },
+  { "productId": "p-yoga", "name": "Yoga Mat", "category": "Fitness", "pricePaise": 79900, "stock": 40, "imageUrl": "/images/yoga.svg", "description": "6 mm non-slip yoga mat with a carry strap." },
+  { "productId": "p-coffee", "name": "Filter Coffee Powder 500 g", "category": "Grocery", "pricePaise": 39900, "stock": 50, "imageUrl": "/images/coffee.svg", "description": "Freshly ground South Indian filter coffee, 80% coffee and 20% chicory." },
+  { "productId": "p-notebook", "name": "Notebook Set (pack of 4)", "category": "Stationery", "pricePaise": 29900, "stock": 70, "imageUrl": "/images/notebook.svg", "description": "Four ruled A5 notebooks with 160 pages each." }
+]

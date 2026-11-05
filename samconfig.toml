@@ -1,0 +1,15 @@
+# Default settings for "sam build" and "sam deploy" so you do not have to answer questions.
+version = 0.1
+
+[default.global.parameters]
+stack_name = "eshop"
+
+[default.build.parameters]
+cached = true
+parallel = true
+
+[default.deploy.parameters]
+capabilities = "CAPABILITY_IAM"
+confirm_changeset = false
+resolve_s3 = true
+fail_on_empty_changeset = false
